@@ -11,18 +11,7 @@ import NavBar from './components/NavBar';
 import ApiService from './api/testService';
 function App() {
   
-  const [data, setData] = useState(null);
 
-  useEffect(() => {
-    ApiService.fetchData("")
-      .then((data) => {
-        setData(data)
-        console.log(data)
-      })
-      .catch(error => console.error('Error:', error));
-
-      
-  }, []);
 
   return (
     
@@ -32,7 +21,12 @@ function App() {
       <Routes>
       
       <Route path='*' element={<NoPage />} />
+
+
       <Route path="/" element={<Home />} />
+      
+      
+      
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       
