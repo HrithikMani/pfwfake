@@ -1,7 +1,7 @@
 function NoPage(){
     return (
         <>
-        no page works
+        <h1>Page does not exist</h1>
         
         </>
     )
