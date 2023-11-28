@@ -28,9 +28,16 @@
 }
 .content{
     position: relative;
-    border: 1px solid grey;
     margin: 0 auto;
     display: block;
     width: 85%;
     margin-left: 15%;
+}
+.box{
+    background-color: #f7f7f7;
+    border: 1px solid grey;
+    padding: 5px;
+    display: inline-block;;
+    width: 20%;
+    margin: 10px;
 }

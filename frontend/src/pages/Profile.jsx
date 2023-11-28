@@ -15,7 +15,21 @@ function Profile() {
             <Link to="/login"><span href="#"><i class="fa-solid fa-circle-xmark sideIcon"></i>Logout</span></Link>
     </div>
     <div className="content">
-        content
+        <div className="box">
+            
+        </div>
+        <div className="box">
+            
+        </div>
+        <div className="box">
+            
+        </div>
+        <div className="box">
+            
+        </div>
+        
+        
+
     </div>
         </>
     )
