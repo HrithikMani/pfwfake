@@ -36,21 +36,25 @@ function Register(){
 
     return (
         <>
-        <section className="form-section">
-        <h1 className="homepage-heading">Talent Acquisition Hub</h1>
+        <div className="gettingStartedLogo">
+        <h1>Talent Acquisition Hub</h1>
+        </div>
+        <section className="form-section divLoginOuter">
+            <h1 className="homepage-heading">Talent Acquisition Hub</h1>
             <div className={`successMsg ${isValid ? 'hide' : 'show'}`}>
             Registered Successfully
-            
-
             </div>
+
         <form onSubmit={handleSubmit}>
             <input required value={firstname} onChange={(e)=>  setFirstname(e.target.value)}  type="text" placeholder="First Name" />
             <input required type="text" placeholder="Last Name"  value={lastname} onChange={(e)=>  setLastname(e.target.value)} />
-            <input required type="email" placeholder="Email ID"  value={email} onChange={(e)=>  setEmail(e.target.value)}/>
+            <input required type="text" placeholder="Email ID"  value={email} onChange={(e)=>  setEmail(e.target.value)}/>
             <input required type="password" placeholder="Password" value={password} onChange={(e)=>  setPassword(e.target.value)} />
-            <button type="submit" className="cyan-button">Sign Up</button>
+            <button type="submit" className="btn btn-primary">Sign Up</button>
         </form>
-        <p className="white-link">Already have an account?<Link to="/login"><span href="signin.html" className="white-link white-link-dec"> Sign in here </span></Link> </p>
+        <div className="loginFoot">
+        <p className="white-link">Already have an account?<Link to="/Login"><span className="white-link white-link-dec"> Sign in here </span></Link> </p>
+        </div>
     </section>
         </>
     )

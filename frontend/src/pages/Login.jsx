@@ -50,17 +50,23 @@ function Login(){
     return (
         <>
  
-    <section className="form-section">
-        <h1 className="homepage-heading">Talent Acquisition Hub</h1>   
+    
+        <div className="gettingStartedLogo">
+        <h1>Talent Acquisition Hub</h1>
+        </div>
+        <section className="form-section divLoginOuter">
         <form>
             <div className={`errorMsg ${isValid ? 'hide' : 'show'}`}>{ermsg}</div>
             <input value={email}  onChange={(e)=> setEmail(e.target.value)} type="text" placeholder="Username/Email" required />
             <input value={password} onChange={(e)=> setPassword(e.target.value)} type="password" placeholder="Password" required />
-            <button type="button" onClick={handlelogin} className="cyan-button">Sign In</button>
+            <button type="button" onClick={handlelogin} className="cyan-button btn btn-primary">Sign In</button>
         </form>
-       
-        <p className="white-link">Don't have an account? <Link to="/register"><span className="white-link white-link-dec">Sign up here</span> </Link> </p>
+        <div className="loginFoot">
 
+        <p >Don't have an account? <Link to="/register"><span className="white-link white-link-dec">Sign up here</span> </Link> </p>
+
+        </div>
+        
     </section>
         </>
     )

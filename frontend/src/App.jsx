@@ -1,38 +1,51 @@
 
-
-import './App.css'
-import Home from './components/Home';
 import React, { useEffect, useState } from "react";
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import NoPage from './components/NoPage';
-import Login from './components/Login';
-import Register from './components/Register';
-import NavBar from './components/NavBar';
-import ApiService from './api/testService';
-import Profile from './components/Profile';
+import { Suspense, lazy } from 'react';
+import Home from "./pages/Home";
+
 function App() {
   
+ const HomePg = lazy(()=> import("./pages/Home"));
 
+ const LoginPg = lazy(()=> import("./pages/Login"));
+
+ 
+ const RegisterPg = lazy(()=> import("./pages/Register"));
 
   return (
     
-    <Router>
+//     <Router>
 
   
-      <Routes>
-      
-      <Route path='*' element={<NoPage />} />
+//       <Routes>
+// {/*       
+//       <Route path='*' element={<NoPage />} /> */}
 
-      <Route path="/" element={<Home />} />
+//       <Route path="/" ele={HomePg} />
       
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/profile" element={<Profile />} />
+//       {/* <Route path="/login" element={<Login />} />
+//       <Route path="/register" element={<Register />} />
+//       <Route path="/profile" element={<Profile />} /> */}
+
       
+//       </Routes>
+//     </Router>
+<Router>
+<Suspense>
+  <Routes>
+  <Route path="/Login" Component={LoginPg} />
+  
+  <Route path="/register" Component={RegisterPg} />
+
+  <Route path="/" Component={HomePg} />
 
 
-      </Routes>
-    </Router>
+ 
+  </Routes>
+</Suspense>
+  </Router>
+
   )
 }
 
