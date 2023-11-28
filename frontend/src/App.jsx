@@ -12,6 +12,7 @@ function App() {
 
  
  const RegisterPg = lazy(()=> import("./pages/Register"));
+ const Profile = lazy(()=> import("./pages/Profile"));
 
   return (
     
@@ -39,6 +40,7 @@ function App() {
   <Route path="/register" Component={RegisterPg} />
 
   <Route path="/" Component={HomePg} />
+  <Route path="/profile" Component={Profile} />
 
 
  

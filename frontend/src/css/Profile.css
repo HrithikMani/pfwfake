@@ -1,0 +1,36 @@
+.logoProfileHeader{
+    background-color: #3e3636;
+    padding: 1rem;
+    text-align: left;
+    color: white;
+}
+
+.sidebar {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    background-color: #333;
+    padding-top: 20px;
+  }
+
+  .sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+  }
+.sideIcon{
+    margin-right: 8px;
+}
+.sideBarActive{
+    background-color: #d72323;
+}
+.content{
+    position: relative;
+    border: 1px solid grey;
+    margin: 0 auto;
+    display: block;
+    width: 85%;
+    margin-left: 15%;
+}
