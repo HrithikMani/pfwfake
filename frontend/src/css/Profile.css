@@ -33,11 +33,45 @@
     width: 85%;
     margin-left: 15%;
 }
-.box{
+.jobbox{
     background-color: #f7f7f7;
     border: 1px solid grey;
     padding: 5px;
-    display: inline-block;;
-    width: 20%;
+    display: flex;
+    width: 31%;
     margin: 10px;
+    border-radius: 5px;;
+}
+.jobOuterBox{
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.flex{
+display: flex;
+color: black;
+}
+.jobsec2{
+    width: 70%;
+}
+.jobsec1{
+    width: 30%;
+}
+.picLogo{
+    border:1px solid grey;
+    width: 100%;
+    height: 100%;
+}
+.grid{
+    display: grid;
+}
+.jobdescOuter{
+    margin-left: 10px;
+}
+.btnApply{
+    display: block;
+    width: 200px;
+}
+.applybtnouter{
+    display: block;
 }
