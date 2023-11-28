@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings - Talent Acquisition Hub</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./interviews.html">Interviews</a></li>
+                <li><a href="./profile.html">Profile</a></li>
+                <li><a href="settings.html" class="active">Settings</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="./signin.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="settings-section text-center">
+        <h1 class="homepage-heading">Settings</h1>
+        <div class="settings-card text-center">
+            <h2 style="text-align: center;">Your Preferences</h2>
+            <form>
+                <div class="form-group text-center" style="text-align: center;">
+                    <h3 for="notifications" style="text-align: center;">Receive Notifications</h3>
+                    <input type="checkbox" id="notifications">
+                </div>
+                <div class="form-group text-center" style="text-align:center">
+                    <h3 for="theme" style="text-align: center;">Select Theme</h3> 
+                    <select id="theme" style="align-items: center;
+                    justify-content: center;">
+                        <option value="light">Light Theme</option>
+                        <option value="dark">Dark Theme</option>
+                    </select>
+                </div>
+                <div style="text-align:center">
+                    <button type="submit" class="cyan-button" style="align-content: center;">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        &copy; Talent Acquisition Hub
+    </footer>
+</body>
+</html>

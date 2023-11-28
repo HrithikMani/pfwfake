@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Talent Acquisition Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        
+        header {
+            background-color: #9eaeb0;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: #2a3739;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+    </header>
+    <div class="container">
+        <h2>Account Settings</h2>
+        <form id="account-settings-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email">
+            <label for="password">Change Password:</label>
+            <input type="password" id="password" name="password" placeholder="New Password">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm New Password">
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    <div class="container">
+        <h2>Notification Settings</h2>
+        <p>Receive email notifications for:</p>
+        <input type="checkbox" id="job-updates" name="job-updates">
+        <label for="job-updates">New Job Openings</label>
+        <input type="checkbox" id="interview-invites" name="interview-invites">
+        <label for="interview-invites">Interview Invitations</label>
+    </div>
+</body>
+</html>

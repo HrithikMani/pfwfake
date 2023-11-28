@@ -10,7 +10,7 @@ function Home(){
         <img src="/assets/img1.jpg" alt="Talent Acquisition Hub" />
         <Link to="/Login">
 
-        <button href="signin.html" className="get-started-button">Get Started</button>
+        <button  className="get-started-button">Get Started</button>
 
         </Link>
        
