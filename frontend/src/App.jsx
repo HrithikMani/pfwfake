@@ -12,26 +12,12 @@ function App() {
 
  
  const RegisterPg = lazy(()=> import("./pages/Register"));
- const Profile = lazy(()=> import("./pages/Profile"));
+ const listjobs = lazy(()=> import("./pages/ListJobs"));
+ const job = lazy(()=> import("./pages/Job"));
 
   return (
     
-//     <Router>
 
-  
-//       <Routes>
-// {/*       
-//       <Route path='*' element={<NoPage />} /> */}
-
-//       <Route path="/" ele={HomePg} />
-      
-//       {/* <Route path="/login" element={<Login />} />
-//       <Route path="/register" element={<Register />} />
-//       <Route path="/profile" element={<Profile />} /> */}
-
-      
-//       </Routes>
-//     </Router>
 <Router>
 <Suspense>
   <Routes>
@@ -40,7 +26,12 @@ function App() {
   <Route path="/register" Component={RegisterPg} />
 
   <Route path="/" Component={HomePg} />
-  <Route path="/profile" Component={Profile} />
+  <Route path="/listjobs" Component={listjobs} />
+  
+  <Route path="/job/:jobid" Component={job} />
+  
+  
+
 
 
  

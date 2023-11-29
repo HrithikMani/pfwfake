@@ -75,3 +75,34 @@ color: black;
 .applybtnouter{
     display: block;
 }
+.jobDescriptionOuter{
+    width: 80%;
+}
+.jobApplynOuter{
+    width: 20%;
+}
+.jobDescHeader{
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    color: black;
+}
+.jobDescImg{
+    width: 250px;
+    display: block;
+    margin: 20px auto;
+}
+.jcontent{
+    background-color: #f7f7f7;
+}
+.jobDescSection{
+    margin-top: 20px;
+    color: black;
+}
+.jobdescapplybtnouter button{
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+}
+.jobdescapplybtnouter{
+    margin-bottom: 50px;
+}

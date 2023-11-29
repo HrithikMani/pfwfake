@@ -38,7 +38,7 @@ function Login(){
                         setIsValid(false);
                        
                     }else{
-                       window.location = "/profile";
+                       window.location = "/listjobs";
                     }
              })    
         .catch(error => {
