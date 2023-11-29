@@ -1,6 +1,34 @@
 import { Link } from "react-router-dom"
 import "../css/Profile.css"
+import { useEffect, useState } from "react";
 function ListJobs() {
+   
+   const elements = document.querySelectorAll('.sidebar');
+
+   const [selectedElement, setSelectedElement] = useState(null);
+
+   useEffect(() => {
+       const initialActiveElement = document.querySelector('.sideBarActive');
+       if (initialActiveElement) {
+         setSelectedElement(initialActiveElement);
+        
+       }
+     }, []);
+
+  
+   const handlesidebar = (event)=>{
+    if(selectedElement){
+        selectedElement.classList.remove("sideBarActive");
+    }
+    event.target.classList.add('sideBarActive');
+    setSelectedElement(event.target);
+    }
+
+    const handleExit = ()=>{
+        selectedElement.classList.remove("sideBarActive");
+        document.querySelector('#listjob').classList.add("sideBarActive");
+        setSelectedElement(document.querySelector('#listjob'));
+    }
     return (
         <>
     <div className="logoProfileHeader">
@@ -8,10 +36,10 @@ function ListJobs() {
     </div>
 
     <div class="sidebar">
-            <a href="#" className="sideBarActive"><i class="fa-solid fa-pen-to-square sideIcon"></i>Job Listings</a>
-            <a data-toggle="modal" data-target="#MyAppplications"><i class="fa-solid fa-bookmark sideIcon"></i>My Applications</a>
-            <a href="#"><i class="fa-solid fa-bell sideIcon"></i>Notification</a>
-            <a href="#"><i class="fa-solid fa-user sideIcon"></i>My Profile</a>
+            <a  onClick={handlesidebar} href="#" id="listjob" className="sideBarActive"><i class="fa-solid fa-pen-to-square sideIcon"></i>Job Listings</a>
+            <a onClick={handlesidebar} data-toggle="modal" data-target="#MyAppplications"><i  class="fa-solid fa-bookmark sideIcon"></i>My Applications</a>
+            <a onClick={handlesidebar} href="#"><i class="fa-solid fa-bell sideIcon"></i>Notification</a>
+            <a onClick={handlesidebar} href="#"><i class="fa-solid fa-user sideIcon"></i>My Profile</a>
             <Link to="/login"><span href="#"><i class="fa-solid fa-circle-xmark sideIcon"></i>Logout</span></Link>
     </div>
     <div className="content">
@@ -60,7 +88,7 @@ function ListJobs() {
       
     <div class="modal-header">
         <h2 class="modal-title">My Applications</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button onClick={handleExit} type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
