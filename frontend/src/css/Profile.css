@@ -126,3 +126,25 @@ color: black;
     height: 80vh;
     overflow-y: scroll;
 }
+.hide{
+    display: none;
+}
+.jobUpdateOuter input{
+    margin: 20px;
+}
+.jobUpdateOuter button{
+    
+    display: block;
+    margin: 20px auto;
+    width: 30%;
+}
+.jobUpdateOuter{
+    color: black;
+}
+.jobUpdateOuter h4{
+    margin: 10px;
+    cursor: pointer;
+}
+.uploadResume{
+    margin-bottom: 30px;
+}

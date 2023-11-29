@@ -14,6 +14,7 @@ function App() {
  const RegisterPg = lazy(()=> import("./pages/Register"));
  const listjobs = lazy(()=> import("./pages/ListJobs"));
  const job = lazy(()=> import("./pages/Job"));
+ const profile = lazy(()=> import("./pages/MyProfile"));
 
   return (
     
@@ -27,7 +28,7 @@ function App() {
 
   <Route path="/" Component={HomePg} />
   <Route path="/listjobs" Component={listjobs} />
-  
+  <Route path="/myprofile" Component={profile} />
   <Route path="/job/:jobid" Component={job} />
   
   
