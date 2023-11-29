@@ -61,7 +61,7 @@ With an average annual revenue growth of 25% over several decades, Shamrock’s 
                         <div className='col'>
                             <h4>Location : <span>Seattle</span> </h4>
                             <h4>Job Id : <span>9001</span> </h4>
-                       
+                            <h4>Pay : <span>$95,200/yr - $126,000/yr</span> </h4>
                        
                         </div>
                        

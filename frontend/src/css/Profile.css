@@ -58,7 +58,6 @@ color: black;
     width: 30%;
 }
 .picLogo{
-    border:1px solid grey;
     width: 100%;
     height: 100%;
 }
@@ -105,4 +104,25 @@ color: black;
 }
 .jobdescapplybtnouter{
     margin-bottom: 50px;
+}
+.jobbox{
+    padding: 20px;
+}
+.sidebar a{
+    cursor: pointer;
+}
+#MyAppplications{
+ color: black;   
+}
+.close{
+    border: none;
+}
+.jobmyapprow{
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.jobouteroverflow{
+    height: 80vh;
+    overflow-y: scroll;
 }
