@@ -31,71 +31,36 @@ function Login(){
             return;
         }
         var dataB = {email:email,password:password}
-      
-            if(localStorage.getItem("type") == "1"){
-                
-
-            axios.post('http://3.93.52.148/api/recruiter/login',dataB)
-                .then(response => {
-                        if(response.data.res === 0){
-                            setErmsg("Invalid Credentials");
-                            setIsValid(false);
-                           
-                        }else{
-                           window.location = "/recruiter";
-                           localStorage.setItem("id",response.data.data[0].id)
-                        }
-                 })    
-            .catch(error => {
-                 console.error('Error sending data:', error);
-            });
-       
-                
-
-
-
-
-                return;
-            }
-        
-        axios.post('http://3.93.52.148/api/login',dataB)
+        axios.post('http://localhost:3000/login',dataB)
             .then(response => {
                     if(response.data.res === 0){
                         setErmsg("Invalid Credentials");
                         setIsValid(false);
                        
                     }else{
-                       window.location = "/listjobs";
-                       localStorage.setItem("id",response.data.data[0].id)
+                       window.location = "/profile";
                     }
              })    
         .catch(error => {
              console.error('Error sending data:', error);
         });
-   
-           
+        
     }
 
     return (
         <>
  
-    
-        <div className="gettingStartedLogo">
-        <h1>Talent Acquisition Hub</h1>
-        </div>
-        <section className="form-section divLoginOuter">
+    <section className="form-section">
+        <h1 className="homepage-heading">Talent Acquisition Hub</h1>   
         <form>
             <div className={`errorMsg ${isValid ? 'hide' : 'show'}`}>{ermsg}</div>
             <input value={email}  onChange={(e)=> setEmail(e.target.value)} type="text" placeholder="Username/Email" required />
             <input value={password} onChange={(e)=> setPassword(e.target.value)} type="password" placeholder="Password" required />
-            <button type="button" onClick={handlelogin} className="cyan-button btn btn-primary">Sign In</button>
+            <button type="button" onClick={handlelogin} className="cyan-button">Sign In</button>
         </form>
-        <div className="loginFoot">
+       
+        <p className="white-link">Don't have an account? <Link to="/register"><span className="white-link white-link-dec">Sign up here</span> </Link> </p>
 
-        <p >Don't have an account? <Link to="/register"><span className="white-link white-link-dec">Sign up here</span> </Link> </p>
-
-        </div>
-        
     </section>
         </>
     )

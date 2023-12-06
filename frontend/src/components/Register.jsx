@@ -18,20 +18,7 @@ function Register(){
         e.preventDefault();
         var data = {email:email,firstname:firstname,lastname:lastname,password:password}
 
-            if(localStorage.getItem("type")=="1"){
-                axios.post('http://3.93.52.148/api/recruiter/register',data).then(response => {
-                console.log(response)
-                setIsValid(false)
-                setEmail("")
-                setFirstname("")
-                setLastname("")
-                setPassword("")
-            })
-            return;
-            }
-
-
-            axios.post('http://3.93.52.148/api/register',data).then(response => {
+            axios.post('http://localhost:3000/register',data).then(response => {
                 console.log(response)
                 setIsValid(false)
                 setEmail("")
@@ -49,25 +36,21 @@ function Register(){
 
     return (
         <>
-        <div className="gettingStartedLogo">
-        <h1>Talent Acquisition Hub</h1>
-        </div>
-        <section className="form-section divLoginOuter">
-            <h1 className="homepage-heading">Talent Acquisition Hub</h1>
+        <section className="form-section">
+        <h1 className="homepage-heading">Talent Acquisition Hub</h1>
             <div className={`successMsg ${isValid ? 'hide' : 'show'}`}>
             Registered Successfully
-            </div>
+            
 
+            </div>
         <form onSubmit={handleSubmit}>
             <input required value={firstname} onChange={(e)=>  setFirstname(e.target.value)}  type="text" placeholder="First Name" />
             <input required type="text" placeholder="Last Name"  value={lastname} onChange={(e)=>  setLastname(e.target.value)} />
-            <input required type="text" placeholder="Email ID"  value={email} onChange={(e)=>  setEmail(e.target.value)}/>
+            <input required type="email" placeholder="Email ID"  value={email} onChange={(e)=>  setEmail(e.target.value)}/>
             <input required type="password" placeholder="Password" value={password} onChange={(e)=>  setPassword(e.target.value)} />
-            <button type="submit" className="btn btn-primary">Sign Up</button>
+            <button type="submit" className="cyan-button">Sign Up</button>
         </form>
-        <div className="loginFoot">
-        <p className="white-link">Already have an account?<Link to="/Login"><span className="white-link white-link-dec"> Sign in here </span></Link> </p>
-        </div>
+        <p className="white-link">Already have an account?<Link to="/login"><span href="signin.html" className="white-link white-link-dec"> Sign in here </span></Link> </p>
     </section>
         </>
     )

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import "../css/Profile.css"
 import { Link, useParams } from 'react-router-dom'
-function Job() {
-
+function Review() {
+    
     const { jobid } = useParams();
     
     const [data,setData] = useState(null);
     const [jobapplied,setJobApplied] = useState(false);
-
+    const [msg,setMsg] = useState("");
     useEffect(() => {
+       
         fetch("http://3.93.52.148/api/job/"+jobid).then(response => response.json()).then(data =>{
             setData(data[0])
         })
@@ -18,6 +19,7 @@ function Job() {
                 setJobApplied(true)
             }
         })
+        setMsg("Application received")
       }, []);
  
       const withdraw = (e)=>{
@@ -117,9 +119,7 @@ function Job() {
                 <div className='row jobDescSection jobdescapplybtnouter'>
                         <div className='col'>
 
-                            {(jobapplied) ? <button onClick={withdraw} className='btn btn-warning'>With Draw Application</button> :<button onClick={apply} className='btn btn-success'>Apply</button>}
-                            
-                       
+                        <h1>Status : {msg}</h1>
                         </div>
                        
                 </div>
@@ -139,4 +139,4 @@ function Job() {
   )
 }
 
-export default Job
+export default Review

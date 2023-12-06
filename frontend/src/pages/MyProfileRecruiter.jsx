@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react'
 import "../css/Profile.css"
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
-function MyProfile() {
+function MyProfileRecruiter() {
+    const handleUpload = ()=>{
+       document.getElementById("fileInput").click();
+    }
   
-  
+    const handleResumeUpload = async()=>{
+        document.getElementById("fileResume").click();
+    }
 
    const [firstname,setFirstname] = useState("")
    const [lastname,setLastname] = useState("")
@@ -64,22 +69,7 @@ function MyProfile() {
         })
 
     }
-  
-    
-
-    const handleResumeUpload = async(e)=>{
-        
-        e.preventDefault();
-        const uploadData = new FormData();
-        uploadData.append("file",setResume);
-        uploadData.append("id",localStorage.getItem("id"));
-        e.preventDefault();
-        axios.post('http://3.93.52.148/api/resume',uploadData).then(data=>{
-            alert("Job List updated")
-        })
    
-    }
-
 
     return (
     <div>
@@ -90,13 +80,13 @@ function MyProfile() {
     <div class="sidebar">
         
          
-            <Link to="/listjobs"><span href="#"><i class="fa-solid fa-circle-left sideIcon"></i>Back</span></Link>
+    <Link to="/recruiter"><span href="#"><i class="fa-solid fa-circle-left sideIcon"></i>Back</span></Link>
             <Link to="/login"><span href="#"><i class="fa-solid fa-circle-xmark sideIcon"></i>Logout</span></Link>
     </div>
     <div className="content jcontent">
         <div className='container-fluid'>
             <div className='row'>
-            <div className='col-12'>
+            <div className='col-8'>
                 
                     <div className='row jobDescHeader'>
                         <div className='col'>
@@ -117,24 +107,12 @@ function MyProfile() {
 
                     </div>
 
-                    <div className='row jobDescHeader'>
-                        <div className='col'>
-                            <h1>My Resume</h1>
-                        </div>
-                    </div>
+                   
 
-                    <div className='row jobUpdateOuter'>
-                    <h4>Resume.pdf</h4>
-
-                    <form class="form-group">
-                         <input type="file" id="fileResume"  class="file-input"  onChange={(e)=> setProfilepic(e.target.files[0])}/>
-                         <button onClick={handleResumeUpload} type="submit" className="btn btn-primary uploadResume">Upload Resume</button>
-                    </form>
-
-                    </div>
+                  
 
             </div>
-            
+          
             </div>
           
 
@@ -145,4 +123,4 @@ function MyProfile() {
   )
 }
 
-export default MyProfile
+export default MyProfileRecruiter

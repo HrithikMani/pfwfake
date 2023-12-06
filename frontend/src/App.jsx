@@ -15,8 +15,13 @@ function App() {
  const listjobs = lazy(()=> import("./pages/ListJobs"));
  const job = lazy(()=> import("./pages/Job"));
  const profile = lazy(()=> import("./pages/MyProfile"));
-
-  return (
+ const recruiter = lazy(()=> import("./pages/Recruiter"));
+ const myorofrec = lazy(()=> import("./pages/MyProfileRecruiter"));
+ 
+ const review = lazy(()=> import("./pages/Review"));
+ const myjobs = lazy(()=> import("./pages/MyJobs"));
+   
+ return (
     
 
 <Router>
@@ -30,9 +35,16 @@ function App() {
   <Route path="/listjobs" Component={listjobs} />
   <Route path="/myprofile" Component={profile} />
   <Route path="/job/:jobid" Component={job} />
+  <Route path="/review/:jobid" Component={review} />
   
   
 
+  <Route path="/recruiter" Component={recruiter} />
+  <Route path="/recruiter/profile" Component={myorofrec} />
+  <Route path="/myjobs" Component={myjobs} />
+  
+  
+  
 
 
  

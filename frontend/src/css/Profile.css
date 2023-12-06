@@ -148,3 +148,29 @@ color: black;
 .uploadResume{
     margin-bottom: 30px;
 }
+.errorMsg{
+    border: 1px solid grey;
+    padding: 10px;
+    background-color: red;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.successMsg{
+    border: 1px solid grey;
+    padding: 10px;
+    background-color: green;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 10px;
+}
+#jobarea{
+    margin-left: 20px;
+}
+.tablec{
+    padding:30px;
+    color: black;
+}
